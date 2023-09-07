@@ -1,16 +1,18 @@
 import React, { useMemo } from "react";
-import { FetchAllArticles } from "./hooks/fetchArticle";
-import { FetchOneArticle } from "./hooks/fetchOneArticle";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ArticleList from "./pages/ArticleList/ArticleList";
+import SingleArticle from "./pages/SingleArticle/SingleArticle";
 
 function App() {
-  const data = FetchAllArticles();
-  const oneArticle = FetchOneArticle(5);
   return (
-    <div>
-      <div className="App">{data ? `Hello World ${data}` : "Loading..."}</div>
-      <div className="App">
-        {oneArticle ? `Hello World ${oneArticle}` : "Loading..."}
-      </div>
+    <div className="App">
+      <Router>
+        <Routes>
+          <Route path="/" element={<ArticleList />} />
+          <Route path="/:id" element={<SingleArticle />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
