@@ -1,8 +1,11 @@
 import React from "react";
+import { useState } from "react";
 import ArticleCard from "./Components/articleCard/ArticleCard";
-import { FetchAllArticles } from "../../hooks/fetchArticle";
+//import { useFetchAllArticles } from "../../hooks/fetchArticle";
 import { GetImagesFromArticles } from "../../utils/GetImagesFromArticles";
 import { GetImageCaption } from "../../utils/GetImageCaption";
+import "./Components/articleCard/ArticleCard.css";
+import article from "../../article.json";
 
 interface Article {
   id: number;
@@ -19,11 +22,12 @@ interface Article {
  */
 const ArticleList: React.FC = () => {
   // Fetch articles
-  const articles: Article[] = FetchAllArticles();
+  const [articles] = useState<Article[]>(article);
 
   return (
     <div>
       {/* Render ArticleCard components */}
+      <h1 className="title">NEWS FEED</h1>
       {articles?.map((article) => (
         <ArticleCard
           key={article.id}

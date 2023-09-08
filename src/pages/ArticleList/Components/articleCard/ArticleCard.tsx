@@ -39,6 +39,7 @@ const ArticleCard: React.FC<IArticleCardProps> = ({
    * Handles navigation to the article when the card is clicked.
    */
   const navigateToArticle = () => {
+    window.scrollTo(0, 0);
     navigate(`/${id}`);
   };
 

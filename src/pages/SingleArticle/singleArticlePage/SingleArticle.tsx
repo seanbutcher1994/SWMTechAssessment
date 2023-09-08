@@ -24,6 +24,7 @@ const SingleArticle: React.FC = () => {
   const article = FetchOneArticle(parsedId);
   const navigate = useNavigate();
   const navigateBack = () => {
+    window.scrollTo(0, 0);
     navigate("/");
   };
 

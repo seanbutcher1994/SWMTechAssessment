@@ -1,8 +1,8 @@
-interface Article {
+export interface Article {
   blocks: Block[];
 }
 
-interface Block {
+export interface Block {
   kind: string;
   url?: string;
 }
