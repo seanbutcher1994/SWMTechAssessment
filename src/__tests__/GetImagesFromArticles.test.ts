@@ -1,4 +1,4 @@
-import { GetImagesFromArticles, Article, Block } from "../utils/GetImagesFromArticles";
+import { GetImagesFromArticles, Article} from "../utils/GetImagesFromArticles";
 
 describe('GetImagesFromArticles', () => {
 
