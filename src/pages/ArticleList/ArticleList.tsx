@@ -13,13 +13,20 @@ interface Article {
   blocks: any[];
 }
 
+/**
+ * Renders a list of ArticleCard components.
+ * Fetches the articles using the FetchAllArticles function and maps over the articles array to render each ArticleCard component with the corresponding article data.
+ */
 const ArticleList: React.FC = () => {
+  // Fetch articles
   const articles: Article[] = FetchAllArticles();
 
   return (
     <div>
+      {/* Render ArticleCard components */}
       {articles?.map((article) => (
         <ArticleCard
+          key={article.id}
           id={article.id}
           title={article.headline}
           source={article.source}

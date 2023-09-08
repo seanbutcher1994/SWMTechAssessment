@@ -1,0 +1,14 @@
+.paragraph {
+  font-size: 1em;
+  line-height: 1.25;
+  margin-top: 1em;
+}
+
+@media screen and (min-width: 768px) {
+  .paragraph {
+      font-size: 1.35em; 
+      line-height: 1.5; 
+      margin-top: 1.5em; 
+    }
+  
+}

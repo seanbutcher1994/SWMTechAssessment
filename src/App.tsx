@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ArticleList from "./pages/ArticleList/ArticleList";
-import SingleArticle from "./pages/SingleArticle/SingleArticle";
+import SingleArticle from "./pages/SingleArticle/singleArticlePage/SingleArticle";
 
 function App() {
   return (

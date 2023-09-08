@@ -1,55 +1,63 @@
-/* YourComponent.css */
-.card {
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .image-container {
-    position: relative;
-    overflow: hidden;
-    max-height: 50vh; /* Adjust as needed */
-  }
-  
-  .image {
-    width: 100%;
-    height: auto;
-  }
-  
-  .text-container {
-    padding: 16px;
-  }
-  
-  .publication-title {
-    font-size: 18px;
-    margin: 0;
-  }
-  
-  .heading {
-    font-size: 36px; /* Double the size of publication title */
-    margin: 8px 0;
-  }
-  
-  .byline {
-    font-size: 14px;
-    color: #888;
-    margin: 0;
-  }
-  
-  @media screen and (min-width: 768px) {
-    .card {
-      width: 66.67%;
-      margin: 0 auto;
-      max-width: 800px; /* Adjust as needed */
-      margin-bottom: 20px;
-    }
+/* 
+  This code snippet defines the styles for a card component. 
+  It sets the display to flex with a column direction, adds margin and border, 
+  and applies a border radius and box shadow. 
+  It also sets the maximum height for the image container and adjusts the size of the image. 
+  The text container has padding, and the publication title, heading, and byline have specific font sizes and margins. 
+  Additionally, there are media queries for larger screens that adjust the width, margin, and box shadow of the card on hover.
+*/
 
-    .card:hover {
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow effect on hover */
-        cursor: pointer; /* Change cursor to a pointer on hover */
-      }
+.card {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+  max-height: 50vh; 
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+.text-container {
+  padding: 16px;
+}
+
+.publication-title {
+  font-size: 18px;
+  margin: 0;
+}
+
+.heading {
+  font-size: 36px; 
+  margin: 8px 0;
+}
+
+.byline {
+  font-size: 14px;
+  color: #888;
+  margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .card {
+    width: 66.67%;
+    margin: 0 auto;
+    max-width: 800px; 
+    margin-bottom: 20px;
   }
+
+  .card:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+    cursor: pointer; 
+  }
+}

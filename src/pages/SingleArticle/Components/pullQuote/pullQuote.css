@@ -1,0 +1,25 @@
+.pull-quote {
+    max-width: 66.67%;
+    display: block;
+    margin: 0 auto;
+    border-left: 10px solid blue;
+    padding-left: 20px;
+
+}
+
+.quote {
+    font-size: 1.5em;
+    font-style: italic;
+    margin-bottom: 0.2em;
+}
+
+@media screen and (min-width:768px) {
+    .quote {
+        font-size: 2.7em;
+    }
+    
+}
+
+.cite {
+    margin-top: 0
+}

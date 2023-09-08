@@ -12,6 +12,17 @@ interface IArticleCardProps {
   caption: string;
 }
 
+/**
+ * Renders a card displaying information about an article.
+ * @param id - The id of the article.
+ * @param title - The title of the article.
+ * @param byline - The author of the article.
+ * @param source - The source of the article.
+ * @param date - The date of the article in ISO 8601 format.
+ * @param image - The URL of the article's image.
+ * @param caption - The caption of the article's image.
+ * @returns JSX elements representing the article card.
+ */
 const ArticleCard: React.FC<IArticleCardProps> = ({
   id,
   title,
@@ -23,9 +34,14 @@ const ArticleCard: React.FC<IArticleCardProps> = ({
 }) => {
   const formattedDate = FormatReadableDate(date);
   const navigate = useNavigate();
+
+  /**
+   * Handles navigation to the article when the card is clicked.
+   */
   const navigateToArticle = () => {
     navigate(`/${id}`);
   };
+
   return (
     <div className="card" onClick={navigateToArticle}>
       <div className="image-container">
