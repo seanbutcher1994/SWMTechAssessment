@@ -17,6 +17,11 @@
     padding: 20px;
     border-bottom: 1px solid #ccc;
 }
+/* .headline-container {
+    display: flex;
+    flex-direction: column;
+   
+} */
 
 .headline {
     font-size: 2em;
@@ -70,5 +75,6 @@
 .button2 {
     margin-bottom: 50px;
 }
+
 
   

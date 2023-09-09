@@ -19,10 +19,15 @@ import { useNavigate } from "react-router-dom";
  * @returns Rendered article details and blocks if `article` is an object.
  */
 const SingleArticle: React.FC = () => {
+  // Grab the ID from the websites URL
   let { id } = useParams();
+  // Parse the ID taken from the URL and turn it to an integer.
   const parsedId = id ? parseInt(id) : 0;
+  // Fetch the Article using the parsedId
   const article = FetchOneArticle(parsedId);
+  // Call the useNavigate hook
   const navigate = useNavigate();
+  // Function to Navigate back to the News Feed (ArticleList.tsx)
   const navigateBack = () => {
     window.scrollTo(0, 0);
     navigate("/");
@@ -30,10 +35,12 @@ const SingleArticle: React.FC = () => {
 
   return (
     <div className="container">
-      <div className="button" onClick={navigateBack}></div>
+      {/* If the article object is returned in the correct format, display it as per below. */}
       {typeof article === "object" && (
         <div className="news-article-header">
+          <div className="button" onClick={navigateBack}></div>
           <h1 className="headline">{article.headline}</h1>
+
           <div className="author-info">
             <span className="author-name">{article.byline}</span>
             <span className="publication">
@@ -50,6 +57,12 @@ const SingleArticle: React.FC = () => {
       )}
       {typeof article === "object" && <BlockRenderer blocks={article.blocks} />}
       <div className="button button2" onClick={navigateBack}></div>
+      {/* If the article error string is returned, display that instead */}
+      {typeof article === "string" && (
+        <div className="news-article-header">
+          <h1 className="headline">{article}</h1>
+        </div>
+      )}
     </div>
   );
 };
